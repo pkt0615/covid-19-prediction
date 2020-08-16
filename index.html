@@ -14,59 +14,37 @@
         <h1 class="text-center">코로나19 예측 및 시각화 프로젝트</h1>
     </div>
 
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="country-selector">원하시는 나라를 선택하세요:</label>
+                    <select class="form-control" name="country-selector" id="country-selector">
+                        <option value="korea">대한민국</option>
+                        <option value="italy">이탈리아</option>
+                        <option value="us">미국</option>
+                        <option value="canada">캐나다</option>
+                        <option value="germany">독일</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
 
     <div class="container mb-3">
-        <h2 class="text-left">대한민국</h2>
+        <h2 id="graph-title" class="text-left">대한민국</h2>
         <hr>
         <div class="row">
-            <div class="col"><canvas id="koreaBarChart"></canvas></div>
+            <div class="col">
+                <canvas class="BarChart" id="koreaBarChart"></canvas>
+            </div>
         </div>
         <div class="row">
-            <div class="col"><canvas id="koreaLineChart"></canvas></div>
-        </div>
-    </div>
-    
-    <div class="container mb-3">
-        <h2 class="text-left">이탈리아</h2>
-        <hr>
-        <div class="row">
-            <div class="col"><canvas id="italyBarChart"></canvas></div>
-        </div>
-        <div class="row">
-            <div class="col"><canvas id="italyLineChart"></canvas></div>
-        </div>
-    </div>
-    
-    <div class="container mb-3">
-        <h2 class="text-left">미국</h2>
-        <hr>
-        <div class="row">
-            <div class="col"><canvas id="usBarChart"></canvas></div>
-        </div>
-        <div class="row">
-            <div class="col"><canvas id="usLineChart"></canvas></div>
-        </div>
-    </div>
-    
-    <div class="container mb-3">
-        <h2 class="text-left">캐나다</h2>
-        <hr>
-        <div class="row">
-            <div class="col"><canvas id="canadaBarChart"></canvas></div>
-        </div>
-        <div class="row">
-            <div class="col"><canvas id="canadaLineChart"></canvas></div>
-        </div>
-    </div>
-    
-    <div class="container mb-3">
-        <h2 class="text-left">독일</h2>
-        <hr>
-        <div class="row">
-            <div class="col"><canvas id="germanyBarChart"></canvas></div>
-        </div>
-        <div class="row">
-            <div class="col"><canvas id="germanyLineChart"></canvas></div>
+            <div class="col">
+                <canvas class="LineChart" id="koreaLineChart"></canvas>
+            </div>
         </div>
     </div>
     
@@ -88,7 +66,27 @@
     <script src="https://pkt0615.github.io/covid-19-prediction/js/us.js"></script>
     <script src="https://pkt0615.github.io/covid-19-prediction/js/canada.js"></script>
     <script src="https://pkt0615.github.io/covid-19-prediction/js/germany.js"></script>
-    
+
+    <script>
+        korea();
+
+        var country_selector = document.getElementById("country-selector");
+        var graph_title = document.getElementById("graph-title");
+        var bar_chart = document.getElementsByClassName("BarChart")[0];
+        var line_chart = document.getElementsByClassName("LineChart")[0];
+        var bc = bar_chart.getContext('2d');
+        var lc = line_chart.getContext('2d');
+        country_selector.addEventListener("change", function() {
+            myChart.destroy();
+            myLineChart.destroy();
+            selected_country = country_selector[country_selector.selectedIndex];
+            graph_title.textContent = selected_country.textContent;
+            bar_chart.id = selected_country.value + "BarChart";
+            line_chart.id = selected_country.value + "LineChart";
+            eval(`${selected_country.value}()`)
+        })
+    </script>
+  
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
