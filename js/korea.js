@@ -17,15 +17,15 @@ var myChart = new Chart(kbc, {
             {
                 label: '대한민국 총 확진자 수',
                 data: korea_data.dataNumbers().slice(131),
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(238, 18, 41, 0.2)',
+                borderColor: 'rgba(238, 18, 41, 1)',
                 borderWidth: 1
             },
             {
                 label: '예측 총 확진자 수',
                 data: korea_pred_total_data,
-                backgroundColor: 'rgba(99, 132, 255, 0.2)',
-                borderColor: 'rgba(99, 132, 255, 1)',
+                backgroundColor: 'rgba(21, 77, 158, 0.2)',
+                borderColor: 'rgba(21, 77, 158, 1)',
                 borderWidth: 1
             }
     ]
@@ -49,15 +49,15 @@ var myLineChart = new Chart(klc, {
             {
                 label: '대한민국 전날 대비 확진자 증감',
                 data: korea_data.dataDailyNumbers().slice(131),
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(238, 18, 41, 0.2)',
+                borderColor: 'rgba(238, 18, 41, 1)',
                 borderWidth: 1
             },
             {
                 label: '예측 전날 대비 확진자 증감',
                 data: korea_pred_data.dataNumbers(),
-                backgroundColor: 'rgba(99, 132, 255, 0.2)',
-                borderColor: 'rgba(99, 132, 255, 1)',
+                backgroundColor: 'rgba(21, 77, 158, 0.2)',
+                borderColor: 'rgba(21, 77, 158, 1)',
                 borderWidth: 1
             }
     ]

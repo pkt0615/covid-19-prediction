@@ -17,15 +17,15 @@ var myChart = new Chart(ibc, {
             {
                 label: '이탈리아 총 확진자 수',
                 data: italy_data.dataNumbers().slice(131),
-                backgroundColor: 'rgba(0, 146, 70, 0.2)',
-                borderColor: 'rgba(0, 146, 70, 1)',
+                backgroundColor: 'rgba(206, 43, 55, 0.2)',
+                borderColor: 'rgba(206, 43, 55, 1)',
                 borderWidth: 1
             },
             {
                 label: '예측 총 확진자 수',
                 data: italy_pred_total_data,
-                backgroundColor: 'rgba(206, 43, 55, 0.2)',
-                borderColor: 'rgba(206, 43, 55, 1)',
+                backgroundColor: 'rgba(0, 146, 70, 0.2)',
+                borderColor: 'rgba(0, 146, 70, 1)',
                 borderWidth: 1
             }
     ]
@@ -50,15 +50,15 @@ var myLineChart = new Chart(ilc, {
                 label: '이탈리아 전날 대비 확진자 증감',
                 data: italy_data.dataDailyNumbers().slice(131),
                 
-                backgroundColor: 'rgba(0, 146, 70, 0.2)',
-                borderColor: 'rgba(0, 146, 70, 1)',
+                backgroundColor: 'rgba(206, 43, 55, 0.2)',
+                borderColor: 'rgba(206, 43, 55, 1)',
                 borderWidth: 1
             },
             {
                 label: '예측 전날 대비 확진자 증감',
                 data: italy_pred_data.dataNumbers(),
-                backgroundColor: 'rgba(206, 43, 55, 0.2)',
-                borderColor: 'rgba(206, 43, 55, 1)',
+                backgroundColor: 'rgba(0, 146, 70, 0.2)',
+                borderColor: 'rgba(0, 146, 70, 1)',
                 borderWidth: 1
             }
     ]

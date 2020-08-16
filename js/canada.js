@@ -17,15 +17,15 @@ var myChart = new Chart(kbc, {
             {
                 label: '캐나다 총 확진자 수',
                 data: canada_data.dataNumbers().slice(131),
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(241, 102, 50, 0.2)',
+                borderColor: 'rgba(241, 102, 50, 1)',
                 borderWidth: 1
             },
             {
                 label: '예측 총 확진자 수',
                 data: canada_pred_total_data,
-                backgroundColor: 'rgba(99, 132, 255, 0.2)',
-                borderColor: 'rgba(99, 132, 255, 1)',
+                backgroundColor: 'rgba(82, 48, 34, 0.2)',
+                borderColor: 'rgba(82, 48, 34, 1)',
                 borderWidth: 1
             }
     ]
@@ -49,15 +49,15 @@ var myLineChart = new Chart(klc, {
             {
                 label: '캐나다 전날 대비 확진자 증감',
                 data: canada_data.dataDailyNumbers().slice(131),
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(241, 102, 50, 0.2)',
+                borderColor: 'rgba(241, 102, 50, 1)',
                 borderWidth: 1
             },
             {
                 label: '예측 전날 대비 확진자 증감',
                 data: canada_pred_data.dataNumbers(),
-                backgroundColor: 'rgba(99, 132, 255, 0.2)',
-                borderColor: 'rgba(99, 132, 255, 1)',
+                backgroundColor: 'rgba(82, 48, 34, 0.2)',
+                borderColor: 'rgba(82, 48, 34, 1)',
                 borderWidth: 1
             }
     ]

@@ -3,7 +3,9 @@ class Data {
         this.dataset = dataset;
         this.country = country;
     }
-
+    
+    /* TO-DOS */
+    // 지역 문제 해결
     data() {
         for (let data of this.dataset) {
             if (data["Country/Region"] == this.country) {
