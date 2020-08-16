@@ -6,6 +6,11 @@ class Data {
 
     data() {
         for (let data of this.dataset) {
+            if (data["Country/Region"] == this.country) {
+            return data;
+            }
+        }
+        for (let data of this.dataset) {
             if (data["Country/Region"].match(this.country)) {
             return data;
             }
