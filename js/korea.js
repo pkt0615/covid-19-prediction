@@ -47,14 +47,14 @@ var myLineChart = new Chart(klc, {
         labels: korea_data.dataKeys().slice(131, 160),
         datasets: [
             {
-                label: '대한민국 일일 확진자 수',
+                label: '대한민국 전날 대비 확진자 증감',
                 data: korea_data.dataDailyNumbers().slice(131),
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgba(255, 99, 132, 1)',
                 borderWidth: 1
             },
             {
-                label: '예측 일일 확진자 수',
+                label: '예측 전날 대비 확진자 증감',
                 data: korea_pred_data.dataNumbers(),
                 backgroundColor: 'rgba(99, 132, 255, 0.2)',
                 borderColor: 'rgba(99, 132, 255, 1)',
