@@ -74,8 +74,7 @@
         var graph_title = document.getElementById("graph-title");
         var bar_chart = document.getElementsByClassName("BarChart")[0];
         var line_chart = document.getElementsByClassName("LineChart")[0];
-        var bc = bar_chart.getContext('2d');
-        var lc = line_chart.getContext('2d');
+        
         country_selector.addEventListener("change", function() {
             myChart.destroy();
             myLineChart.destroy();
